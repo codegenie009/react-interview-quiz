@@ -10,6 +10,10 @@ class ArticlesList extends React.Component {
   }
 
   componentDidMount() {
+    GlobalDataSource.addChangeListener(this.handleChange);
+  }
+  
+  componentWillUnmount() {
     GlobalDataSource.removeChangeListener(this.handleChange);
   }
 
@@ -29,3 +33,5 @@ class ArticlesList extends React.Component {
     )
   }
 }
+
+export default ArticlesList;
